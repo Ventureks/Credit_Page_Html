@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Pizzy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styl.css">
+    <style>
+        input,
+        select,
+        button {
+            margin: 10px 0;
+            padding: 5px;
+        }
+        #menu {
+            padding-top: 5%;
+            text-align: center;
+        }
+        .menu{
+            padding-top: 1%;
+            text-align: center;
+        }
+        .menu h3{
+            text-align: center;
+            padding-top: 2%;
+        }
+        .menu p{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Kalkulator Pizzy</h1>
+    </header>
+
+    <nav>
+        <a href="Kalkulator.html">Menu Pizzy</a>
+        <a href="index.html">Strona Główna</a>
+    </nav>
+
+    <div class="menu">
+        <h1>Menu Pizzy</h1>
+        <h3>1. Pizza Hawajska</h3>
+        <img src="zdjęcia/hawaj.jpg" width="200px" height="200px">
+        <p>Hawajska to pizza z sosem, szynką, serem i ananasem. </p>
+        <p>Przede wszystkim wyróżnia się unikalnym smakiem i posiada właściwości prozdrowotne.</p>
+        
+        <h3>2. Pizza Margharitta</h3>
+        <img src="zdjęcia/marg.jpg" width="200px" height="200px">
+        <p>Pizza Margarita to ciasto posmarowane sosem pomidorowym, wzbogacone serem mozzarella i bazylią. </p>
+        <p>To najprostsza wersja włoskiej pizzy, która znana jest dziś na całym świecie.</p>
+    
+        <h3>3. Pizza Capriciosa</h3>
+        <img src="zdjęcia/capri.jpg" width="200px" height="200px">
+        <p>W najbardziej klasycznym przepisie na pizzę capricciosa znajdziemy ser mozzarella, pieczoną szynkę, pieczarki.</p>
+   
+        <h3>4. Pizza Włoska</h3>
+        <img src="zdjęcia/włoska.jpg" width="200px" height="200px">
+        <p>Składniki obowiązkowe to sos, szynka włoska prosciutto crudo, ser mozarella, rukola, pomidorki</p>
+    
+        <h3>5. Pizza Bananowa</h3>
+        <img src="zdjęcia/banan.jpg" width="200px" height="200px">
+        <p>Składa się z kurczaka, ananasa, banana, sera oraz przyprawy curry</p>
+    </section>
+
+    <div id="menu">
+        <h2>Kalkulator dowozu pizzy</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="kilometry">Podaj liczbę kilometrów:</label>
+                    <input type="number" id="kilometry" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="pizza">Wybierz pizzę:</label>
+                    <select id="pizza" class="form-control">
+                        <option value="45">Hawajska - 45 zł</option>
+                        <option value="39">Margharitta - 39 zł</option>
+                        <option value="42">Capriciosa - 42 zł</option>
+                        <option value="46">Pizza Włoska - 46 zł</option>
+                        <option value="35">Pizza Bananowa - 35 zł</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="obliczKoszt()" class="btn btn-primary">Oblicz koszt dostawy</button>
+            <p id="wynik"></p>
+        </div>
+        <br/> <br/>
+        <script>
+            function obliczKoszt() {
+                var kilometry = document.getElementById("kilometry").value;
+                var cenaPizza = document.getElementById("pizza").value;
+                var koszt = parseFloat(kilometry) * 2 + parseFloat(cenaPizza);
+                document.getElementById("wynik").innerHTML = "Koszt dostawy wraz z pizzą: " + koszt.toFixed(2) + " zł";
+            }
+        </script>
+    </div>
+
+    <footer>
+        &copy; 2024 Strona Zaliczeniowa
+    </footer>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
